@@ -1,14 +1,19 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>Users:</h1>
+    <ul>
+      <li v-for="(user, index) in users" :key="index">
+        {{user.name}} is {{user.age}} years old
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Users',
   props: {
-    msg: String
+    users: Array
   }
 }
 </script>
@@ -23,7 +28,6 @@ ul {
   padding: 0;
 }
 li {
-  display: inline-block;
   margin: 0 10px;
 }
 a {

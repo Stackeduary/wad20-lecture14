@@ -1,17 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Today/>
+    <Users :users="users"/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import Today from './components/Today.vue'
+import Users from './components/Users.vue'
 
 export default {
   name: 'App',
+  data: function () {
+    return {
+        users: [
+            {name: "John Doe", age: 21},
+            {name: "Jake Appleseed", age: 30},
+            {name: "Foo Bar", age: 67},
+        ]
+    }
+  },
   components: {
-    HelloWorld
+    HelloWorld,
+    Today,
+    Users,
   }
 }
 </script>
